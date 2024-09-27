@@ -28,7 +28,6 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `clientes` (
-  `id-cliente` int(10) NOT NULL,
   `Nombre` varchar(20) NOT NULL,
   `Apellido` varchar(20) NOT NULL,
   `Telefono` int(10) NOT NULL,
@@ -45,26 +44,6 @@ CREATE TABLE `clientes` (
 INSERT INTO `clientes` (`Nombre`, `Apellido`, `Telefono`, `DNI`, `Cuota`, `FechadePago`, `Estado_Pago`) VALUES
 ('Elian', 'Ferreyra', 12335467, 47222666, 41000, '2024-08-06', '');
 
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `clientes`
---
-ALTER TABLE `clientes`
-  ADD PRIMARY KEY (`id-cliente`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `clientes`
---
-ALTER TABLE `clientes`
-  MODIFY `id-cliente` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
