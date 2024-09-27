@@ -42,8 +42,8 @@ CREATE TABLE `clientes` (
 -- Volcado de datos para la tabla `clientes`
 --
 
-INSERT INTO `clientes` (`id-cliente`, `Nombre`, `Apellido`, `Telefono`, `DNI`, `Cuota`, `FechadePago`, `Estado_Pago`) VALUES
-(1, 'Elian', 'Ferreyra', 12335467, 47222666, 41000, '2024-08-06', '');
+INSERT INTO `clientes` (`Nombre`, `Apellido`, `Telefono`, `DNI`, `Cuota`, `FechadePago`, `Estado_Pago`) VALUES
+('Elian', 'Ferreyra', 12335467, 47222666, 41000, '2024-08-06', '');
 
 --
 -- Índices para tablas volcadas
