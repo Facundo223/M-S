@@ -1,0 +1,29 @@
+.boton {
+    text-decoration: none; 
+}
+.boton button {
+    background-color: #007bff; 
+    color: white; 
+    border: none; 
+    padding: 12px 24px; 
+    font-size: 16px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, transform 0.2s; 
+    margin-left: 10px;
+}
+.boton button:hover {
+    background-color: #0056b3; 
+    transform: scale(1.05); 
+}
+.boton button:focus {
+    outline: none; 
+}
+
+.boton button:active {
+    background-color: #004085; 
+    transform: scale(0.98); 
+}

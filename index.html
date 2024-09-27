@@ -7,46 +7,98 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
+<style>
+  body{
+    background-color: #b5adad;
+  }
+</style>
 <body>
-    <header>
-        <h1>Gimnasio L&L</h1>
-        <br>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#horarios">Horarios</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-
+  <header>
+    <div class="header-container">
+        <a href="index.html"><img src="img/logo1.png" alt="Logo Gimnasio L&L" class="header-logo"></a> 
+        <h1><a href="index.html">Gimnasio L&L</a></h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
     <section id="inicio">
-        <h2>Bienvenidos a Gimnasio</h2>
-        <p>Texto de bienvenida al gimnasio...</p>
+      <h2>Bienvenidos a Gimnasio L&L</h2>
+         
     </section>
 
     <section id="servicios">
-        <h2>Nuestros Servicios</h2>
-        <ul>
-            <li>Área de Pesas</li>
-            <li>Entrenamiento Personalizado</li>
-            <li>Boxeo</li>
-            <li>Clases de Crossfit</li>
-        </ul>
-    </section>
-
-    <section id="horarios">
-        <h2>Horarios de Clases</h2>
-        <p>Horarios de las clases disponibles...</p>
-    </section>
-
+      <h2>Nuestros Servicios</h2>
+          <div class="row">
+              <div class="col-md-4">
+                  <div class="card" style="width: 18rem;">
+                      <img src="img/boxeo.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title text-center">Boxeo</h5>
+                      </div>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">-Horarios: 10:00AM - 15:00PM</li>
+                        <li class="list-group-item">-Días: Lunes, Miercoles, Jueves y Viernes</li>
+                        <li class="list-group-item">-Cuota Mensual:$10.000</li>
+                        <li class="list-group-item">-Cuota Semanal:$4.000</li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="card" style="width: 18rem;">
+                      <img src="img/musculacion.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title text-center">Musculacion</h5>
+                      </div>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Horarios: 07:00AM - 21:00PM</li>
+                        <li class="list-group-item">Días: Lunes, Martes, Miercoles, Jueves y Viernes</li>
+                        <li class="list-group-item">Cuota Mensual:$15.000</li>
+                        <li class="list-group-item">Cuota Semanal:$6.000</li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="card" style="width: 18rem;">
+                      <img src="img/funcional.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title text-center">Funcional</h5>
+                      </div>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Horarios: 18:00PM - 19:00PM</li>
+                        <li class="list-group-item">Días: Lunes, Martes , Miercoles, Jueves y Viernes</li>
+                        <li class="list-group-item">Cuota Mensual:$15.000</li>
+                        <li class="list-group-item">Cuota Semanal:$6.000</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+  </section>
     <section id="contacto">
+      <div class="contact-info">
         <h2>Contacto</h2>
-        <p>Información de contacto...</p>
+        <div class="info-item">
+          <i class="fas fa-phone"></i>
+          <p>Teléfono: <a href="tel:+21948164">21948164</a></p>
+        </div>
+        <div class="info-item">
+          <i class="fab fa-instagram"></i>
+          <p>Instagram: <a href="https://www.instagram.com/lyl_gym" target="_blank">@lyl_gym</a></p>
+        </div>
+        <div class="info-item">
+          <i class="fab fa-facebook"></i>
+          <p>Facebook: <a href="https://www.facebook.com/lyl.gym" target="_blank">lyl.gym</a></p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <p>Gmail: <a href="mailto:elianatorres@gmail.com">elianatorres@gmail.com</a></p>
+        </div>
+      </div>
     </section>
-
-
     <script src="java/bootstrap.bundle.min.js"></script>
 </body>
 </html>

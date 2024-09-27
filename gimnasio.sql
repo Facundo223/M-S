@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-07-2024 a las 23:39:50
+-- Tiempo de generación: 13-09-2024 a las 15:53:11
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.0.30
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,48 +24,46 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `alumno`
+-- Estructura de tabla para la tabla `clientes`
 --
 
-CREATE TABLE `alumno` (
+CREATE TABLE `clientes` (
+  `id-cliente` int(10) NOT NULL,
   `Nombre` varchar(20) NOT NULL,
   `Apellido` varchar(20) NOT NULL,
   `Telefono` int(10) NOT NULL,
   `DNI` int(8) NOT NULL,
   `Cuota` int(10) NOT NULL,
-  `FechadePago` date NOT NULL
+  `FechadePago` date NOT NULL,
+  `Estado_Pago` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
-
 --
--- Estructura de tabla para la tabla `empleado`
+-- Volcado de datos para la tabla `clientes`
 --
 
-CREATE TABLE `empleado` (
-  `Nombre` varchar(30) NOT NULL,
-  `Apellido` varchar(30) NOT NULL,
-  `Telefono` int(10) NOT NULL,
-  `DNI` int(8) NOT NULL,
-  `Puesto` varchar(20) NOT NULL,
-  `Pago` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `clientes` (`id-cliente`, `Nombre`, `Apellido`, `Telefono`, `DNI`, `Cuota`, `FechadePago`, `Estado_Pago`) VALUES
+(1, 'Elian', 'Ferreyra', 12335467, 47222666, 41000, '2024-08-06', '');
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `alumno`
+-- Indices de la tabla `clientes`
 --
-ALTER TABLE `alumno`
-  ADD PRIMARY KEY (`DNI`);
+ALTER TABLE `clientes`
+  ADD PRIMARY KEY (`id-cliente`);
 
 --
--- Indices de la tabla `empleado`
+-- AUTO_INCREMENT de las tablas volcadas
 --
-ALTER TABLE `empleado`
-  ADD PRIMARY KEY (`DNI`);
+
+--
+-- AUTO_INCREMENT de la tabla `clientes`
+--
+ALTER TABLE `clientes`
+  MODIFY `id-cliente` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
