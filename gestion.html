@@ -12,7 +12,7 @@
     <h1>Gestión de Usuarios</h1>
     <a href="ver_registros.php" class=" boton"><button>Ver Registros</button></a>
     <h2>Registrar Cliente</h2>
-    <form action="alta.php" method="post">
+    <form action="alta.php" method="post" onsubmit="return validateForm()">
         <div class="container">
         <label for="Nombre">Nombre:</label>
         <input type="text" id="Nombre" name="Nombre" required>
@@ -21,25 +21,22 @@
         <input type="text" id="Apellido" name="Apellido" required>
         <br>
         <label for="Telefono">Telefono:</label>
-        <input type="tel" id="Telefono" name="Telefono" maxlength="11" required>
+        <input type="tel" id="Telefono" name="Telefono" maxlength="10" required>
         <br>
         <label for="DNI">DNI:</label>
         <input type="number" id="DNI" name="DNI" required>
         <br>
         <label for="cuota">Cuota</label>
         <select id="cuota" name="cuota" multiple required>
-            <option value="8000">8000 - Musculacion</option>
-            <option value="10000">10000 - Taekwando</option>
-            <option value="13000">13000 - Zumba</option>
-            <option value="12000">12000 - Funcional</option>
-            <option value="15000">15000 - Boxeo</option>
+            <option value="8000 - Musculacion">8000 - Musculacion</option>
+            <option value="10000 - Taekwando">10000 - Taekwando</option>
+            <option value="13000 - Zumba">13000 - Zumba</option>
+            <option value="12000 - Funcional">12000 - Funcional</option>
+            <option value="15000 - Boxeo">15000 - Boxeo</option>
         </select>
         <br>
         <label for="FechadePago">Fecha de pago</label>
         <input type="date" id="FechadePago" name="FechadePago" required>
-        <br>
-        <label for="Estado_Pago">Estado de pago</label>
-        <input type="text" id="Estado_Pago" name="Estado_Pago" required>
         <br>
         <input type="submit" value="Agregar Usuario">
     </div>
@@ -54,8 +51,21 @@
         <br>
         <input type="submit" value="Eliminar Usuario">
         </div>
-    </form> 
-    <h2>Modificar Cliente</h2>
+    </form>
+
+    <h2>Registrar Asistencia</h2>
+    <form action="registrar_asistencia.php" method="post">
+    <label for="Nombre_asistencia">Nombre:</label>
+    <input type="text" id="Nombre_asistencia" name="Nombre" required>
+    <br>
+    <label for="FechaAsistencia">Fecha de Asistencia:</label>
+    <input type="date" id="FecheAsistencia" name="FechaAsistencia" required>
+    <br>
+    <input type="submit" value="Registrar Asistencia">
+    </form>
+
+
+    <!-- <h2>Modificar Cliente</h2>
     <form action="modificar1.php" method="post">
         <div class="container">
             <label for="DNI">DNI</label>
@@ -63,20 +73,18 @@
             <br>
         <input type="submit" name="modificar" value="modificar">
         </div>
-    </form> 
-        <script src="java/bootstrap.bundle.min.js"></script>
+    </form>  -->
 
+        <script src="java/bootstrap.bundle.min.js"></script>
         <script>
             function validateForm() {
-                const dniFields = document.querySelectorAll('input[name="DNI"]');
-                for (const field of dniFields) {
-                    if (field.value.length > 8) {
-                        alert("El DNI debe tener un máximo de 8 dígitos.");
-                        return false; 
-                    }
+                const dniField = document.querySelector('input[name="DNI"]');
+                if (dniField.value.length > 8) {
+                    alert("El DNI debe tener un máximo de 8 dígitos. Se recortará a 8 dígitos.");
+                    dniField.value = dniField.value.substring(0, 8);
                 }
                 return true; 
             }
-        </script>
+            </script>            
 </body>
 </html>

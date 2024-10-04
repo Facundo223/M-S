@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-09-2024 a las 15:53:11
+-- Tiempo de generación: 04-10-2024 a las 18:17:08
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -24,6 +24,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `asistencias`
+--
+
+CREATE TABLE `asistencias` (
+  `id` int(11) NOT NULL,
+  `DNI` int(8) NOT NULL,
+  `FechaAsistencia` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `asistencias`
+--
+
+INSERT INTO `asistencias` (`id`, `DNI`, `FechaAsistencia`) VALUES
+(1, 47222666, '2024-10-04'),
+(2, 47222666, '2024-10-05'),
+(3, 47222666, '2024-10-06'),
+(4, 47222666, '2024-10-07');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `clientes`
 --
 
@@ -32,18 +54,38 @@ CREATE TABLE `clientes` (
   `Apellido` varchar(20) NOT NULL,
   `Telefono` int(10) NOT NULL,
   `DNI` int(8) NOT NULL,
-  `Cuota` int(10) NOT NULL,
-  `FechadePago` date NOT NULL,
-  `Estado_Pago` text NOT NULL
+  `Cuota` varchar(30) NOT NULL,
+  `FechadePago` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `clientes`
 --
 
-INSERT INTO `clientes` (`Nombre`, `Apellido`, `Telefono`, `DNI`, `Cuota`, `FechadePago`, `Estado_Pago`) VALUES
-('Elian', 'Ferreyra', 12335467, 47222666, 41000, '2024-08-06', '');
+INSERT INTO `clientes` (`Nombre`, `Apellido`, `Telefono`, `DNI`, `Cuota`, `FechadePago`) VALUES
+('Elian', 'Ferreyra', 12335467, 47222666, '41000', '2024-08-06'),
+('Lionel', 'Paredes', 1321312312, 1020304050, '13000', '2024-10-04');
 
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `asistencias`
+--
+ALTER TABLE `asistencias`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `asistencias`
+--
+ALTER TABLE `asistencias`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

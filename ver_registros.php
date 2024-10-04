@@ -1,20 +1,26 @@
 <?php
-// Conexión a la base de datos
-$servername = "localhost"; // Cambia esto por el nombre de tu servidor
-$username = "root"; // Cambia esto por tu nombre de usuario
-$password = ""; // Cambia esto por tu contraseña
-$dbname = "gimnasio"; // Cambia esto por el nombre de tu base de datos
 
-// Crea una conexión
+$servername = "localhost"; 
+$username = "root"; 
+$password = ""; 
+$dbname = "gimnasio"; 
+
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verifica la conexión
+
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-// Consulta para obtener todos los registros
-$sql = "SELECT DNI, DNI, Nombre, Apellido, Telefono, cuota, FechadePago, Estado_Pago FROM clientes";
+
+$sql = "
+    SELECT c.DNI, c.Nombre, c.Apellido, c.Telefono, c.cuota, c.FechadePago, COUNT(a.DNI) AS Total_Asistencias
+    FROM clientes c
+    LEFT JOIN asistencias a ON c.DNI = a.DNI
+    GROUP BY c.DNI, c.Nombre, c.Apellido, c.Telefono, c.cuota, c.FechadePago
+";
+
 $result = $conn->query($sql);
 ?>
 
@@ -25,12 +31,12 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles1.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Ver Registros</title>
 </head>
 <body>
     <h1>Registros de Clientes</h1>
-    
-
+    <a href="gestion.html" class="boton"><button>Regresar</button></a>
     <div class="container">
         <table class="table table-bordered">
             <thead>
@@ -41,14 +47,12 @@ $result = $conn->query($sql);
                     <th>DNI</th>
                     <th>Cuota</th>
                     <th>Fecha de Pago</th>
-                    <th>Estado de Pago</th>
+                    <th>Total Asistencias</th> <!-- Nueva columna -->
                 </tr>
             </thead>
             <tbody>
                 <?php
-               
                 if ($result->num_rows > 0) {
-            
                     while($row = $result->fetch_assoc()) {
                         echo "<tr>
                             <td>{$row['Nombre']}</td>
@@ -57,11 +61,11 @@ $result = $conn->query($sql);
                             <td>{$row['DNI']}</td>
                             <td>{$row['cuota']}</td>
                             <td>{$row['FechadePago']}</td>
-                            <td>{$row['Estado_Pago']}</td>
+                            <td>{$row['Total_Asistencias']}</td> <!-- Mostrar total de asistencias -->
                         </tr>";
                     }
                 } else {
-                    echo "<tr><td colspan='8'>No se encontraron registros</td></tr>";
+                    echo "<tr><td colspan='7'>No se encontraron registros</td></tr>";
                 }
                 ?>
             </tbody>
@@ -69,8 +73,8 @@ $result = $conn->query($sql);
     </div>
     
     <?php
-  
     $conn->close();
     ?>
 </body>
 </html>
+

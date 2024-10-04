@@ -1,7 +1,7 @@
-.boton {
+.boton,.btn btn-primary {
     text-decoration: none; 
 }
-.boton button {
+.boton button,.btn btn-primary {
     background-color: #007bff; 
     color: white; 
     border: none; 

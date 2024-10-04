@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 session_start();
 $DNI=$_REQUEST['DNI'];
 $conexion= mysqli_connect("localhost","root","") or die ("problemas de conexion");
@@ -56,4 +56,4 @@ if(isset($EstadoDePago)) echo $EstadoDePago
 </form>
     
 </body>
-</html>
+</html> -->
