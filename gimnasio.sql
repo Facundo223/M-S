@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-10-2024 a las 18:17:08
+-- Tiempo de generación: 18-10-2024 a las 15:20:47
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -41,7 +41,30 @@ INSERT INTO `asistencias` (`id`, `DNI`, `FechaAsistencia`) VALUES
 (1, 47222666, '2024-10-04'),
 (2, 47222666, '2024-10-05'),
 (3, 47222666, '2024-10-06'),
-(4, 47222666, '2024-10-07');
+(4, 47222666, '2024-10-07'),
+(6, 1020304050, '2024-10-04');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `clases`
+--
+
+CREATE TABLE `clases` (
+  `nombre` varchar(20) NOT NULL,
+  `precio` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `clases`
+--
+
+INSERT INTO `clases` (`nombre`, `precio`) VALUES
+('Musculacion', 8000),
+('Taekwando', 10000),
+('Zumba', 13000),
+('Funcional', 12000),
+('Boxeo', 15000);
 
 -- --------------------------------------------------------
 
@@ -84,7 +107,7 @@ ALTER TABLE `asistencias`
 -- AUTO_INCREMENT de la tabla `asistencias`
 --
 ALTER TABLE `asistencias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
