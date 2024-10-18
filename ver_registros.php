@@ -36,7 +36,7 @@ $result = $conn->query($sql);
 </head>
 <body>
     <h1>Registros de Clientes</h1>
-    <a href="gestion.html" class="boton"><button>Regresar</button></a>
+    <a href="gestion.php" class="boton"><button>Regresar</button></a>
     <div class="container">
         <table class="table table-bordered">
             <thead>
@@ -47,7 +47,7 @@ $result = $conn->query($sql);
                     <th>DNI</th>
                     <th>Cuota</th>
                     <th>Fecha de Pago</th>
-                    <th>Total Asistencias</th> <!-- Nueva columna -->
+                    <th>Total Asistencias</th> 
                 </tr>
             </thead>
             <tbody>
@@ -61,7 +61,7 @@ $result = $conn->query($sql);
                             <td>{$row['DNI']}</td>
                             <td>{$row['cuota']}</td>
                             <td>{$row['FechadePago']}</td>
-                            <td>{$row['Total_Asistencias']}</td> <!-- Mostrar total de asistencias -->
+                            <td>{$row['Total_Asistencias']}</td> 
                         </tr>";
                     }
                 } else {

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-10-2024 a las 15:20:47
+-- Tiempo de generación: 18-10-2024 a las 17:07:23
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -52,7 +52,7 @@ INSERT INTO `asistencias` (`id`, `DNI`, `FechaAsistencia`) VALUES
 
 CREATE TABLE `clases` (
   `nombre` varchar(20) NOT NULL,
-  `precio` int(11) NOT NULL
+  `precio` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -60,11 +60,11 @@ CREATE TABLE `clases` (
 --
 
 INSERT INTO `clases` (`nombre`, `precio`) VALUES
-('Musculacion', 8000),
-('Taekwando', 10000),
-('Zumba', 13000),
-('Funcional', 12000),
-('Boxeo', 15000);
+('Musculacion', 15000),
+('Taekwando', 25000),
+('Zumba', 7000),
+('Funcional', 5000),
+('Boxeo', 5000);
 
 -- --------------------------------------------------------
 
