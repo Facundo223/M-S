@@ -28,6 +28,7 @@ $result = $conn->query($sql);
 
     <h1>Gestión de Usuarios</h1>
     <a href="ver_registros.php" class="boton"><button>Ver Registros</button></a>
+    <a href="gestion.php" class="boton"><button>Actualizar Pagina</button></a>
     <h2>Registrar Cliente</h2>
     <form action="alta.php" method="post" onsubmit="return validateForm()">
         <div class="container">
@@ -60,9 +61,9 @@ $result = $conn->query($sql);
         <input type="submit" value="Agregar Usuario">
         </div>
     </form>
-
+    <h2>Actualizar Precios</h2>
     <form action="actualizar.php" method="post">
-        <div class="container">
+    <div class="container">
     <label for="nuevoPrecioMusculacion">Musculación:</label>
     <input type="number" id="nuevoPrecioMusculacion" name="nuevoPrecioMusculacion" placeholder="Nuevo precio" required>
     <br>
