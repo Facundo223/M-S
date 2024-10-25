@@ -5,14 +5,11 @@ $username = "root";
 $password = ""; 
 $dbname = "gimnasio"; 
 
-
 $conn = new mysqli($servername, $username, $password, $dbname);
-
 
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
-
 
 $sql = "
     SELECT c.DNI, c.Nombre, c.Apellido, c.Telefono, c.cuota, c.FechadePago, COUNT(a.DNI) AS Total_Asistencias
@@ -47,13 +44,31 @@ $result = $conn->query($sql);
                     <th>DNI</th>
                     <th>Cuota</th>
                     <th>Fecha de Pago</th>
-                    <th>Total Asistencias</th> 
+                    <th>Total Asistencias</th>
+                    <th>Estado de Pago</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                 if ($result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) {
+                        // Calcular el estado de pago
+                        $fecha_pago = new DateTime($row['FechadePago']);
+                        $fecha_actual = new DateTime();
+                        $diferencia_dias = $fecha_pago->diff($fecha_actual)->days;
+                        $estado_pago = 'Regular';
+
+                        // Lógica para definir el estado de pago
+                        if ($diferencia_dias <= 0) {
+                            $estado_pago = 'Vencido';
+                        } elseif ($diferencia_dias <= 3) {
+                            $estado_pago = 'Próximo a Vencer (3 días)';
+                        } elseif ($diferencia_dias <= 7) {
+                            $estado_pago = 'Próximo a Vencer (7 días)';
+                        } elseif ($row['Total_Asistencias'] >= 30) {
+                            $estado_pago = '30 Asistencias Alcanzadas';
+                        }
+
                         echo "<tr>
                             <td>{$row['Nombre']}</td>
                             <td>{$row['Apellido']}</td>
@@ -61,11 +76,12 @@ $result = $conn->query($sql);
                             <td>{$row['DNI']}</td>
                             <td>{$row['cuota']}</td>
                             <td>{$row['FechadePago']}</td>
-                            <td>{$row['Total_Asistencias']}</td> 
+                            <td>{$row['Total_Asistencias']}</td>
+                            <td>$estado_pago</td>
                         </tr>";
                     }
                 } else {
-                    echo "<tr><td colspan='7'>No se encontraron registros</td></tr>";
+                    echo "<tr><td colspan='8'>No se encontraron registros</td></tr>";
                 }
                 ?>
             </tbody>
@@ -77,4 +93,5 @@ $result = $conn->query($sql);
     ?>
 </body>
 </html>
+
 
