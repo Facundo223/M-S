@@ -40,6 +40,8 @@
         </taskproperties>
         <task id="1" uid="ecb12921c40b4e6aa64ed8e418b073b8" name="Analisis" meeting="false" start="2024-04-22" duration="60" complete="0" thirdDate="2024-04-22" thirdDate-constraint="0" expand="true">
             <task id="5" uid="0cfc1105ecab4e658c9324bc26f60b9e" name="Problematicas del sistema" meeting="false" start="2024-04-22" duration="9" complete="0" thirdDate="2024-04-22" thirdDate-constraint="0" expand="true">
+                <notes><![CDATA[No tenia una buena gestion y nosotros quisimos hacerle un sistema en el que pueda facilitarle la gestion
+]]></notes>
                 <depend id="6" type="2" difference="0" hardness="Strong"/>
             </task>
             <task id="6" uid="8ee060ce634b4c2e9f4527dd8ccb1d20" name="Análisis de las necesidades del sistema" meeting="false" start="2024-05-03" duration="15" complete="0" thirdDate="2024-05-03" thirdDate-constraint="0" expand="true">
@@ -57,21 +59,29 @@
                 <depend id="18" type="2" difference="0" hardness="Strong"/>
             </task>
             <task id="18" uid="5bc5ad9a4ca34126bee5aab86e1d552c" name="Testeo de la pagina web" meeting="false" start="2024-07-31" duration="12" complete="0" thirdDate="2024-07-30" thirdDate-constraint="0" expand="true">
+                <notes><![CDATA[la pagina informativa que este todo correctamente
+]]></notes>
                 <depend id="19" type="2" difference="0" hardness="Strong"/>
             </task>
             <task id="19" uid="b0cfce05dd2e4ada99ff8e51f2b70480" name="Prototipo de la base de datos" meeting="false" start="2024-08-16" duration="7" complete="0" thirdDate="2024-08-15" thirdDate-constraint="0" expand="true">
+                <notes><![CDATA[seria el gestion de usuarios como va hacer que va tener que cosas va a hacer]]></notes>
                 <depend id="20" type="2" difference="0" hardness="Strong"/>
             </task>
             <task id="20" uid="6b1343985e1e4f06881893a70e212e54" name="Testeo de la base de datos" meeting="false" start="2024-08-27" duration="5" complete="0" thirdDate="2024-08-26" thirdDate-constraint="0" expand="true">
+                <notes><![CDATA[testear si esta todo completo si anda correctamente todo y se pueden hacer las consultas]]></notes>
                 <depend id="21" type="2" difference="0" hardness="Strong"/>
             </task>
             <task id="21" uid="ffceaff11dfe4e02b0e20b67b79d7d85" name="Testeo de la conexion" meeting="false" start="2024-09-03" duration="5" complete="0" thirdDate="2024-09-02" thirdDate-constraint="0" expand="true">
+                <notes><![CDATA[Se verifica si la conexion con la base de datos se reciba todos los registros como las consultas hechas]]></notes>
                 <depend id="22" type="2" difference="0" hardness="Strong"/>
             </task>
             <task id="22" uid="e5da03a98ae3446ab67aa3c5678d8c18" name="prototipo de estado de pago" meeting="false" start="2024-09-10" duration="13" complete="0" thirdDate="2024-09-09" thirdDate-constraint="0" expand="true">
+                <notes><![CDATA[lo queremos hacer es que al llegar 30 dias se reinicie el dia a 1 y al llegar a los 30 dias, 7 dias antes te aparezca un mensaje que diga que le faltan 7 dias para que pague]]></notes>
                 <depend id="23" type="2" difference="0" hardness="Strong"/>
             </task>
             <task id="23" uid="fb555732d04048389e2bf35b293e57df" name="Testeo del estado de pago" meeting="false" start="2024-09-27" duration="6" complete="0" thirdDate="2024-09-26" thirdDate-constraint="0" expand="true">
+                <notes><![CDATA[comprobamos que este todo correctamente y que funcione lo del estado de pago lo cual es asi 
+]]></notes>
                 <depend id="14" type="2" difference="0" hardness="Strong"/>
             </task>
         </task>

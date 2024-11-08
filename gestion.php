@@ -28,7 +28,11 @@ $result = $conn->query($sql);
 
     <h1>Gestión de Usuarios</h1>
     <a href="ver_registros.php" class="boton"><button>Ver Registros</button></a>
+    <a href="delete.php"class="boton"><button>Eliminar Usuario</button></a>
+    <a href="register.php"class="boton"><button>Registrar Asistencia</button></a>
+    <a href="actu.php"class="boton"><button>Actualizar Precios</button></a>
     <a href="gestion.php" class="boton"><button>Actualizar Pagina</button></a>
+    <br>
     <h2>Registrar Cliente</h2>
     <form action="alta.php" method="post" onsubmit="return validateForm()">
         <div class="container">
@@ -61,51 +65,8 @@ $result = $conn->query($sql);
         <input type="submit" value="Agregar Usuario">
         </div>
     </form>
-    <h2>Actualizar Precios</h2>
-    <form action="actualizar.php" method="post">
-    <div class="container">
-    <label for="nuevoPrecioMusculacion">Musculación:</label>
-    <input type="number" id="nuevoPrecioMusculacion" name="nuevoPrecioMusculacion" placeholder="Nuevo precio" required>
-    <br>
-    <label for="nuevoPrecioTaekwondo">Taekwondo:</label>
-    <input type="number" id="nuevoPrecioTaekwondo" name="nuevoPrecioTaekwondo" placeholder="Nuevo precio" required>
-    <br>
-    <label for="nuevoPrecioZumba">Zumba:</label>
-    <input type="number" id="nuevoPrecioZumba" name="nuevoPrecioZumba" placeholder="Nuevo precio" required>
-    <br>
-    <label for="nuevoPrecioFuncional">Funcional:</label>
-    <input type="number" id="nuevoPrecioFuncional" name="nuevoPrecioFuncional" placeholder="Nuevo precio" required>
-    <br>
-    <label for="nuevoPrecioBoxeo">Boxeo:</label>
-    <input type="number" id="nuevoPrecioBoxeo" name="nuevoPrecioBoxeo" placeholder="Nuevo precio" required>
-    <br>
-    <input type="submit" value="Actualizar Precios">
-    </div>
-</form>
+    
 
-
-    <h2>Eliminar Usuario</h2>
-    <form action="baja.php" method="post">
-        <div class="container">
-            <label for="DNI">DNI</label>
-            <input type="number" id="DNI" name="DNI" required>
-            <br>
-            <input type="submit" value="Eliminar Usuario">
-        </div>
-    </form>
-
-    <h2>Registrar Asistencia</h2>
-    <form action="registrar_asistencia.php" method="post">
-        <div class="container">
-            <label for="Nombre_asistencia">Nombre:</label>
-            <input type="text" id="Nombre_asistencia" name="Nombre" required>
-            <br>
-            <label for="FechaAsistencia">Fecha de Asistencia:</label>
-            <input type="date" id="FecheAsistencia" name="FechaAsistencia" required>
-            <br>
-            <input type="submit" value="Registrar Asistencia">
-        </div>
-    </form>
 
     <script src="java/bootstrap.bundle.min.js"></script>
     <script>
