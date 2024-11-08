@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-10-2024 a las 15:27:46
+-- Tiempo de generación: 08-11-2024 a las 15:47:07
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -43,7 +43,10 @@ INSERT INTO `asistencias` (`id`, `DNI`, `FechaAsistencia`) VALUES
 (3, 47222666, '2024-10-06'),
 (4, 47222666, '2024-10-07'),
 (6, 1020304050, '2024-10-04'),
-(37, 12312312, '2024-10-25');
+(37, 12312312, '2024-10-25'),
+(38, 12312312, '2024-11-08'),
+(39, 47222666, '2024-11-08'),
+(40, 21312313, '2024-11-08');
 
 -- --------------------------------------------------------
 
@@ -61,11 +64,11 @@ CREATE TABLE `clases` (
 --
 
 INSERT INTO `clases` (`nombre`, `precio`) VALUES
-('Musculacion', 10000),
-('Taekwando', 25000),
-('Zumba', 7000),
-('Funcional', 5000),
-('Boxeo', 5000);
+('Musculacion', 20000),
+('Taekwando', 7000),
+('Zumba', 15000),
+('Funcional', 10000),
+('Boxeo', 4000);
 
 -- --------------------------------------------------------
 
@@ -87,9 +90,7 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`Nombre`, `Apellido`, `Telefono`, `DNI`, `Cuota`, `FechadePago`) VALUES
-('Elian', 'Ferreyra', 12335467, 47222666, '41000', '2024-08-06'),
-('Lionel', 'Paredes', 1321312312, 1020304050, '13000', '2024-10-04'),
-('facundo', 'acosta', 1231231312, 12312312, 'Boxeo', '2024-10-25');
+('facundo', 'acosta diaz', 1023013021, 21312313, 'Funcional', '2024-11-08');
 
 --
 -- Índices para tablas volcadas
@@ -109,7 +110,7 @@ ALTER TABLE `asistencias`
 -- AUTO_INCREMENT de la tabla `asistencias`
 --
 ALTER TABLE `asistencias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
