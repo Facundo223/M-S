@@ -77,23 +77,22 @@ $result = $conn->query($sql);
                         $diferencia_dias = $fecha_pago->diff($fecha_actual)->days;
                         $estado_pago = '';
                         $estado_class = ''; // Variable para la clase de estado
-
+                        $dias_faltantes = 30 - $diferencia_dias;
                         // Definir el estado de pago y asignar la clase de color
                         if ($diferencia_dias > 30) {
                             $estado_pago = "Vencido";
                             $estado_class = "estado-vencido";
                         } elseif ($diferencia_dias <= 30 && $diferencia_dias > 23) {
-                            $estado_pago = "Próximo a vencer (7 días)";
+                            $estado_pago = "Próximo a vencer $dias_faltantes";
                             $estado_class = "estado-proximo";
                         } elseif ($diferencia_dias <= 23 && $diferencia_dias > 20) {
-                            $estado_pago = "Próximo a vencer (10 días)";
+                            $estado_pago = "Próximo a vencer $dias_faltantes";
                             $estado_class = "estado-proximo";
                         } elseif ($diferencia_dias <= 0) {
                             $estado_pago = "Pago pendiente";
                             $estado_class = "estado-pago-pendiente";
                         } else {
                             // Si está dentro del periodo de 30 días, calcular los días que faltan
-                            $dias_faltantes = 30 - $diferencia_dias;
                             $estado_pago = "Faltan $dias_faltantes días para pagar";
                             $estado_class = "estado-pendiente";
                         }
