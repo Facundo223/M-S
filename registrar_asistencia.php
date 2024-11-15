@@ -47,9 +47,9 @@ if (mysqli_num_rows($result) > 0) {
 mysqli_close($conexion);
 
 // Botón para volver a la gestión de usuarios
-echo '<br><a href="gestion.php">
+echo '<br><a href="ver_registros.php">
         <button style="padding: 10px 20px; font-size: 16px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
-            Volver a Gestión de Usuarios
+            Volver a los Registros
         </button>
       </a>';
 ?>

@@ -10,11 +10,10 @@
 </head>
 <body>
 
-    <h1>Gestión de Usuarios</h1>
+    <h1>Registrar Asistencia</h1>
     <a href="ver_registros.php" class="boton"><button>Ver Registros</button></a>
     <a href="gestion.php" class="boton"><button>Volver</button></a>
 
-    <h2>Registrar Asistencia</h2>
     <form action="registrar_asistencia.php" method="post">
         <div class="container">
             <label for="Nombre_asistencia">Nombre:</label>

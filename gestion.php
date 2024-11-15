@@ -29,7 +29,6 @@ $result = $conn->query($sql);
     <h1>Gestión de Usuarios</h1>
     <a href="ver_registros.php" class="boton"><button>Ver Registros</button></a>
     <a href="delete.php"class="boton"><button>Eliminar Usuario</button></a>
-    <a href="register.php"class="boton"><button>Registrar Asistencia</button></a>
     <a href="actu.php"class="boton"><button>Actualizar Precios</button></a>
     <a href="gestion.php" class="boton"><button>Actualizar Pagina</button></a>
     <br>

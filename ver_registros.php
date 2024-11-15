@@ -1,5 +1,4 @@
 <?php
-
 $servername = "localhost"; 
 $username = "root"; 
 $password = ""; 
@@ -30,10 +29,30 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
     <title>Ver Registros</title>
+    <style>
+        .estado-vencido {
+            color: red;
+            font-weight: bold;
+        }
+        .estado-proximo {
+            color: orange;
+            font-weight: bold;
+        }
+        .estado-pendiente {
+            color: green;
+            font-weight: bold;
+        }
+        .estado-pago-pendiente {
+            color: darkgreen;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <h1>Registros de Clientes</h1>
     <a href="gestion.php" class="boton"><button>Regresar</button></a>
+    <a href="fecha-pago.php" class="boton"><button>Actualizar Fecha De Pago</button></a>
+    <a href="register.php"class="boton"><button>Registrar Asistencia</button></a>
     <div class="container">
         <table class="table table-bordered">
             <thead>
@@ -56,17 +75,27 @@ $result = $conn->query($sql);
                         $fecha_pago = new DateTime($row['FechadePago']);
                         $fecha_actual = new DateTime();
                         $diferencia_dias = $fecha_pago->diff($fecha_actual)->days;
-                        $estado_pago = 'Regular';
+                        $estado_pago = '';
+                        $estado_class = ''; // Variable para la clase de estado
 
-                        // Lógica para definir el estado de pago
-                        if ($diferencia_dias <= 0) {
-                            $estado_pago = 'Vencido';
-                        } elseif ($diferencia_dias <= 3) {
-                            $estado_pago = 'Próximo a Vencer (3 días)';
-                        } elseif ($diferencia_dias <= 7) {
-                            $estado_pago = 'Próximo a Vencer (7 días)';
-                        } elseif ($row['Total_Asistencias'] >= 30) {
-                            $estado_pago = '30 Asistencias Alcanzadas';
+                        // Definir el estado de pago y asignar la clase de color
+                        if ($diferencia_dias > 30) {
+                            $estado_pago = "Vencido";
+                            $estado_class = "estado-vencido";
+                        } elseif ($diferencia_dias <= 30 && $diferencia_dias > 23) {
+                            $estado_pago = "Próximo a vencer (7 días)";
+                            $estado_class = "estado-proximo";
+                        } elseif ($diferencia_dias <= 23 && $diferencia_dias > 20) {
+                            $estado_pago = "Próximo a vencer (10 días)";
+                            $estado_class = "estado-proximo";
+                        } elseif ($diferencia_dias <= 0) {
+                            $estado_pago = "Pago pendiente";
+                            $estado_class = "estado-pago-pendiente";
+                        } else {
+                            // Si está dentro del periodo de 30 días, calcular los días que faltan
+                            $dias_faltantes = 30 - $diferencia_dias;
+                            $estado_pago = "Faltan $dias_faltantes días para pagar";
+                            $estado_class = "estado-pendiente";
                         }
 
                         echo "<tr>
@@ -77,7 +106,7 @@ $result = $conn->query($sql);
                             <td>{$row['cuota']}</td>
                             <td>{$row['FechadePago']}</td>
                             <td>{$row['Total_Asistencias']}</td>
-                            <td>$estado_pago</td>
+                            <td class='$estado_class'>$estado_pago</td>
                         </tr>";
                     }
                 } else {
@@ -93,5 +122,3 @@ $result = $conn->query($sql);
     ?>
 </body>
 </html>
-
-
